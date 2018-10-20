@@ -14,8 +14,14 @@ namespace SkyLab.Models
         {
         }
 
-        public DbSet<SkyLab.Models.Cell> Cells { get; set; }
+        public DbSet<Cell> Cells { get; set; }
 
-        public DbSet<SkyLab.Models.Sensor> Sensors { get; set; }
+        public DbSet<Sensor> Sensors { get; set; }
+
+        public DbSet<CellSensors> CellSensors { get; set; }
+
+        public DbSet<MetricSystem> MetricSystem { get; set; }
+
+        public DbSet<Metric> Metrics { get; set; }
     }
 }

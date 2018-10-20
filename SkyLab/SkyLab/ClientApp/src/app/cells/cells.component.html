@@ -12,9 +12,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let cell of cells">
-            <td>{{ cell.updatedAt }}</td>
-            <td>{{ cell.cellName }}</td>
-            <td>{{ cell.comments }}</td>
+            <td (dblclick)="details(cell.id)">{{ cell.updatedAt }}</td>
+            <td (dblclick)="details(cell.id)">{{ cell.cellName }}</td>
+            <td (dblclick)="details(cell.id)">{{ cell.comments }}</td>
         </tr>
     </tbody>
 </table>

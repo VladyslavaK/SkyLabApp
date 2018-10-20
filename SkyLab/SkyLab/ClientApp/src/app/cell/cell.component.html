@@ -1,0 +1,9 @@
+<p *ngIf="!cell"><em>Loading...</em></p>
+
+<div *ngIf="cell">
+    <p>
+        {{cell.cell.cellName}} </p>
+    <ul *ngFor="let sensor of cell.sensors">
+        <li>{{ sensor.sensorName }}</li>
+    </ul>
+</div>

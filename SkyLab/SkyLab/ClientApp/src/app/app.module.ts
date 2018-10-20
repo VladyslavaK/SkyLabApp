@@ -9,6 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CellsComponent } from './cells/cells.component';
 import { SensorsComponent } from './sensors/sensors.component';
+import { CellComponent } from './cell/cell.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SensorsComponent } from './sensors/sensors.component';
     NavMenuComponent,
     HomeComponent,
     CellsComponent,
-    SensorsComponent
+    SensorsComponent,
+    CellComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,6 +26,7 @@ import { SensorsComponent } from './sensors/sensors.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'cell/:id', component: CellComponent },
       { path: 'cells', component: CellsComponent },
       { path: 'sensors', component: SensorsComponent },
     ])

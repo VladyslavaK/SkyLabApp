@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiRoutes } from '../../services/app.constants';
+import { Sensor } from '../../services/models';
 
 @Component({
   selector: 'app-sensors',
@@ -16,9 +17,4 @@ export class SensorsComponent {
   }
 }
 
-interface Sensor {
-  cellName: string;
-  id: number;
-  updatedAt: Date;
-  comments: string;
-}
+

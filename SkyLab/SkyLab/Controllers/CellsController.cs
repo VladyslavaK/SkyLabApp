@@ -36,14 +36,18 @@ namespace SkyLab.Controllers
                 return BadRequest(ModelState);
             }
 
-            var cell = await _context.Cells.FindAsync(id);
+            var cell =  await _context.Cells.FindAsync(id);
+            var sensors = from a in _context.CellSensors 
+                            join d in _context.Sensors on a.SensorID equals d.ID
+                            where a.CellID == id
+                            select d;
 
             if (cell == null)
             {
                 return NotFound();
             }
 
-            return Ok(cell);
+            return Ok(new { Cell = cell, Sensors = sensors});
         }
 
         // PUT: api/Cells/5
