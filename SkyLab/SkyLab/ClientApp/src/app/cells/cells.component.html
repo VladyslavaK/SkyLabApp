@@ -1,5 +1,23 @@
 <h1>Information about available Cells will be here</h1>
 
+<p *ngIf="!cells"><em>Loading...</em></p>
+
+<table class='table' *ngIf="cells">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cell of cells">
+            <td>{{ cell.updatedAt }}</td>
+            <td>{{ cell.cellName }}</td>
+            <td>{{ cell.comments }}</td>
+        </tr>
+    </tbody>
+</table>
 <!-- <p>This is a simple example of an Angular component.</p>
 
 <p>Current count: <strong>{{ currentCount }}</strong></p>

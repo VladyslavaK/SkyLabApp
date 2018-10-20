@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using SkyLab.Models;
 
 namespace SkyLab
 {
@@ -27,6 +29,9 @@ namespace SkyLab
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddDbContext<CellsContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
