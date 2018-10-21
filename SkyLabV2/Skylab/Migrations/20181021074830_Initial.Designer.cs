@@ -10,7 +10,7 @@ using Skylab.Data;
 namespace Skylab.Migrations
 {
     [DbContext(typeof(CellsContext))]
-    [Migration("20181020190915_Initial")]
+    [Migration("20181021074830_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -185,88 +185,7 @@ namespace Skylab.Migrations
 
                     b.ToTable("AspNetUserTokens");
                 });
-
-            modelBuilder.Entity("SkyLab.Models.Cell", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CellName");
-
-                    b.Property<string>("Comments");
-
-                    b.Property<DateTime>("UpdatedAt");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Cells");
-                });
-
-            modelBuilder.Entity("SkyLab.Models.CellSensors", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<long>("CellID");
-
-                    b.Property<long>("SensorID");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("CellSensors");
-                });
-
-            modelBuilder.Entity("SkyLab.Models.Metric", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<long>("MetricSystemID");
-
-                    b.Property<long>("SensorID");
-
-                    b.Property<DateTime>("Timestamp");
-
-                    b.Property<long>("Value");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Metrics");
-                });
-
-            modelBuilder.Entity("SkyLab.Models.MetricSystem", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Value");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("MetricSystem");
-                });
-
-            modelBuilder.Entity("SkyLab.Models.Sensor", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Comments");
-
-                    b.Property<string>("SensorName");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Sensors");
-                });
-
+           
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")

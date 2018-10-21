@@ -48,79 +48,6 @@ namespace Skylab.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cells",
-                columns: table => new
-                {
-                    ID = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CellName = table.Column<string>(nullable: true),
-                    UpdatedAt = table.Column<DateTime>(nullable: false),
-                    Comments = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Cells", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CellSensors",
-                columns: table => new
-                {
-                    ID = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CellID = table.Column<long>(nullable: false),
-                    SensorID = table.Column<long>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CellSensors", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Metrics",
-                columns: table => new
-                {
-                    ID = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    SensorID = table.Column<long>(nullable: false),
-                    MetricSystemID = table.Column<long>(nullable: false),
-                    Value = table.Column<long>(nullable: false),
-                    Timestamp = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Metrics", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "MetricSystem",
-                columns: table => new
-                {
-                    ID = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
-                    Value = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MetricSystem", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Sensors",
-                columns: table => new
-                {
-                    ID = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    SensorName = table.Column<string>(nullable: true),
-                    Comments = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sensors", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -283,21 +210,7 @@ namespace Skylab.Migrations
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
 
-            migrationBuilder.DropTable(
-                name: "Cells");
-
-            migrationBuilder.DropTable(
-                name: "CellSensors");
-
-            migrationBuilder.DropTable(
-                name: "Metrics");
-
-            migrationBuilder.DropTable(
-                name: "MetricSystem");
-
-            migrationBuilder.DropTable(
-                name: "Sensors");
-
+       
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
