@@ -5,7 +5,9 @@
     ViewData["Title"] = "Delete";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-
+<hr>
+<hr>
+<hr>
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
@@ -26,10 +28,11 @@
             @Html.DisplayFor(model => model.Sensor.Comments)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="Sensor.ID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-page="./Index">Back to List</a>
     </form>
 </div>
+<hr>
